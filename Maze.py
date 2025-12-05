@@ -69,14 +69,15 @@ if __name__ == "__main__":
             print("MESSAGE 2: You fall into the chasm of doom") # Out of bounds.
             
         else:
-            if grid[currentRow][currentCol] == EMPTY:
+            cell = grid[currentRow][currentCol]
+            if cell == EMPTY:
                 grid[currentRow][currentCol] = VISITED
                 
-            elif grid[currentRow][currentCol] == WALL:
+            elif cell == WALL:
                 done = True
                 print("MESSAGE 3 : You stumble blindly into a solid concrete wal") # Hit wall.
 
-            elif grid[currentRow][currentCol] == END:
+            elif cell == END:
                 done = True
                 solved = True
                 print("MESSAGE 4:SOLVED!!!!!") # Solved.
@@ -89,8 +90,7 @@ if __name__ == "__main__":
 
 
     if not solved:
-        print("MESSAGE 5: You have failed to escape. Future archeologists gaze 
-upon your remains in bafflement") # Did not reach the end.
+        print("MESSAGE 5: You have failed to escape. Future archeologists gaze upon your remains in bafflement") # Did not reach the end.
 
 
 # Second view
